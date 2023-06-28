@@ -1,0 +1,550 @@
+@font-face {
+  font-family: "latoregular";
+  src: url("../fonts/lato-regular-webfont.woff2") format("woff2"),
+    url("../fonts/lato-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "latoregular";
+}
+#hb-chat-box {
+  display: inline-block;
+  width: 100%;
+}
+.FullScreen {
+  right: 0;
+  top: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  box-shadow: 0 -6px 99px -17px rgba(0, 0, 0, 0.68);
+  left: 0;
+  border-radius: 10px 10px 0 0;
+  right: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ChatScreen {
+  /* right: 0; */
+  top: inherit;
+  position: fixed;
+  bottom: 100px;
+  width: 50vh;
+  box-shadow: 0 -6px 99px -17px rgba(0, 0, 0, 0.68);
+  /* left: 0; */
+  border-radius: 10px;
+  right: 0;
+  margin-right: 10px;
+  box-sizing: border-box;
+  height: 700px;
+}
+.ChatScreen .chat-footer {
+  background: #eff3f8;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+}
+.ChatScreen .chat-card.incoming .txt {
+  border-radius: 20px 0 0 0;
+}
+.ChatScreen .txt p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.ChatScreen ::-webkit-scrollbar {
+  width: 3px;
+}
+.ChatScreen .chat-sec {
+  height: calc(100vh - 405px);
+}
+.ChatScreen .chat-card.incoming .txt {
+  max-width: 80%;
+  overflow: scroll;
+  max-height: 800px;
+  overflow-x: hidden;
+}
+.ChatScreen .chat-card.outgoing .txt {
+  max-width: 80%;
+}
+
+.chat-box-top {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 70px;
+  padding: 0 20px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+}
+.top-sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.top-sec i {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.top-sec .lt-side img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.top-sec h2 {
+  font-size: 22px;
+  line-height: 28px;
+  color: #000;
+  margin: 0 0 0 30px;
+}
+.rt-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rt-side button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.rt-side button img {
+  width: 100%;
+  height: auto;
+}
+
+.top-sec .lt-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+/* .chat-sec .chat-card {
+  min-height: 10px;
+  max-width: 50%;
+  min-width: 100px;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+} */
+.chat-sec img {
+  margin-right: 10px;
+}
+/* .chat-card.incoming {
+  float: left;
+  background: #fff;
+}
+.chat-card.outgoing {
+  float: right;
+  background: #c9e4fb;
+} */
+.display-profile {
+  border-radius: 50%;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.profile h2 {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+span.date-time {
+  display: block;
+}
+span.date-time time {
+  font-size: 12px;
+  color: #555555bd;
+  margin-left: 20px;
+}
+.chat-card.outgoing .txt {
+  background: #c9e4fb;
+  min-width: 50px;
+  display: inline-block;
+  max-width: 500px;
+  border-radius: 10px 0 10px 10px;
+}
+.chat-card.outgoing {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.chat-card.outgoing .profile img {
+  margin-right: 0;
+}
+.chat-card.incoming .txt {
+  background: #fff;
+  min-width: 100px;
+  display: inline-block;
+  max-width: 500px;
+  border-radius: 0px 20px 20px 20px;
+}
+
+.chat-card.loading-card .txt {
+  background: #fff;
+  min-width: 100px;
+  display: inline-block;
+  border-radius: 0px 20px 20px 20px;
+  transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
+}
+
+span.date-time em {
+  font-style: normal;
+  font-size: 12px;
+  color: #d3d1cf;
+}
+.custom-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table td,
+th {
+  border: 1px solid #00000042;
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.chat-sec tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.txt {
+  margin-bottom: 10px;
+}
+.txt p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.chat-card .txt {
+  padding: 10px;
+}
+
+.chat-card.outgoing .profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.chat-card.outgoing .profile h2 {
+  margin: 0 10px;
+}
+
+.chat-footer {
+  background: #eff3f8;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box;
+}
+.chat-footer input {
+  width: 100%;
+  margin: 0 10px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-family: "latoregular";
+  font-size: 16px;
+}
+.chat-footer input:focus {
+  outline: none;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+}
+.buttons button {
+  display: block;
+  margin: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-right: 10px;
+}
+.buttons button:last-child {
+  margin-right: 0;
+}
+.buttons button img {
+  width: 22px;
+}
+.floating-btn i {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 0px 10px -6px #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.floating-btn i img {
+  width: 30px;
+  height: 30px;
+}
+.floating-btn .close-btn {
+  width: 25px;
+  height: 25px;
+}
+.floating-btn {
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+.msg-send {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  background: #fff;
+  margin: 10px auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.chat-sec {
+  display: block;
+  overflow: scroll;
+  height: calc(100vh - 125px);
+  overflow-x: hidden;
+  background: #eff3f8;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.chip-card {
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.chip-card ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chip-card ul li {
+  min-width: 200px;
+  width: auto;
+  border: 2px solid #4a3bf5;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  margin-right: 15px;
+  height: auto;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.chip-card ul li:nth-child(3n) {
+  margin-right: 0;
+}
+.chip-card ul li:last-child {
+  margin-right: 0;
+}
+.cmn-que {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.cmn-que p {
+  font-family: "latoregular";
+  margin: 0;
+  font-size: 17px;
+  color: #4a3bf5;
+}
+.chip-card ul li:hover {
+  background: #4a3bf5;
+}
+.chip-card ul li:hover .cmn-que p {
+  color: #fff;
+}
+
+.custom-table {
+  min-height: 100px;
+  overflow: scroll;
+  display: inline-block;
+  overflow-x: hidden;
+  max-height: 380px;
+}
+
+.typing-loader {
+  margin: 10px auto;
+  width: 6px;
+  height: 6px;
+  -webkit-animation: line 1s linear infinite alternate;
+  -moz-animation: line 1s linear infinite alternate;
+  animation: line 1s linear infinite alternate;
+  border-radius: 50%;
+  margin-left: 35px;
+}
+
+@-webkit-keyframes line {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2),
+      24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      24px 0px 0px 0px rgba(0, 0, 0, 2);
+  }
+}
+
+@-moz-keyframes line {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2),
+      24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      24px 0px 0px 0px rgba(0, 0, 0, 2);
+  }
+}
+
+@keyframes line {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2),
+      24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2),
+      24px 0px 0px 0px rgba(0, 0, 0, 2);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.date-sticky-bar {
+  display: flex;
+  justify-content: center;
+}
+.dsb-in {
+  background: #2e90f0;
+  border-radius: 50px;
+  width: auto;
+  padding: 3px;
+}
+.dsb-in p {
+  color: #fff;
+  margin: 3px;
+}
+
+.window-View {
+  width: 300px !important;
+}
+
+
+@media  screen and (max-width: 1600px) {
+  .floating-btn i img {
+    width: 20px;
+    height: 20px;
+  }
+  .custom-table td,
+  th {
+    padding: 5px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .top-sec h2 {
+    font-size: 16px;
+    line-height: 28px;
+    color: #000;
+    margin: 0 0 0 30px;
+  }
+  .ChatScreen {
+    height: 600px;
+  }
+  .ChatScreen .chat-sec {
+    height: calc(100vh - 265px);
+  }
+  .ChatScreen .txt p {
+        font-size: 12px;
+    line-height: 24px;
+  
+}
+.custom-table {display:inline;}
+
+
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+  .ChatScreen .chat-sec {
+    height: calc(100vh - 1045px);
+  }
+}
