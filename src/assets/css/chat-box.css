@@ -1,12 +1,7 @@
-@font-face {
-  font-family: "latoregular";
-  src: url("../fonts/lato-regular-webfont.woff2") format("woff2"),
-    url("../fonts/lato-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 body {
-  font-family: "latoregular";
+  font-family: "Poppins", sans-serif;
 }
 #hb-chat-box {
   display: inline-block;
@@ -31,15 +26,14 @@ body {
   /* right: 0; */
   top: inherit;
   position: fixed;
-  bottom: 100px;
-  width: 50vh;
+  bottom: 90px;
+  width: 450px;
   box-shadow: 0 -6px 99px -17px rgba(0, 0, 0, 0.68);
   /* left: 0; */
   border-radius: 10px;
   right: 0;
   margin-right: 10px;
   box-sizing: border-box;
-  height: 700px;
 }
 .ChatScreen .chat-footer {
   background: #eff3f8;
@@ -64,6 +58,13 @@ body {
 }
 .ChatScreen .chat-sec {
   height: calc(100vh - 405px);
+  margin-top: 70px;
+}
+.ChatScreen .main-chat-box {
+  display: block;
+  height: 700px;
+  overflow: hidden;
+  position: relative;
 }
 .ChatScreen .chat-card.incoming .txt {
   max-width: 80%;
@@ -75,6 +76,23 @@ body {
   max-width: 80%;
 }
 
+.ChatScreen .chat-box-top {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 70px;
+  padding: 0 20px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
 .chat-box-top {
   color: #fff;
   display: flex;
@@ -87,6 +105,7 @@ body {
   cursor: pointer;
   transition: background-color 0.2s ease;
   box-sizing: border-box;
+  width: 100%;
 }
 .top-sec {
   display: flex;
@@ -102,14 +121,16 @@ body {
 .top-sec .lt-side img {
   display: block;
   height: 100%;
-  width: 100%;
-  object-fit: cover;
+  width: 100px;
+  object-fit: contain;
 }
 .top-sec h2 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
   color: #000;
   margin: 0 0 0 30px;
+  width: 100%;
+  text-align: center;
 }
 .rt-side {
   display: flex;
@@ -132,7 +153,7 @@ body {
 }
 
 .top-sec .lt-side {
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -179,6 +200,7 @@ span.date-time time {
   font-size: 12px;
   color: #555555bd;
   margin-left: 20px;
+  line-height: 22px;
 }
 .chat-card.outgoing .txt {
   background: #c9e4fb;
@@ -242,7 +264,7 @@ th {
   font-size: 16px;
   line-height: 32px;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 .chat-card .txt {
   padding: 10px;
@@ -267,15 +289,20 @@ th {
   bottom: 0;
   box-sizing: border-box;
 }
+
+
+
 .chat-footer input {
   width: 100%;
-  margin: 0 10px;
+  margin: 0 10px 0 0;
   height: 45px;
   border: none;
   border-radius: 10px;
-  padding: 0 10px;
-  font-family: "latoregular";
+  padding: 5px 10px;
+  /* font-family: "latoregular"; */
   font-size: 16px;
+
+
 }
 .chat-footer input:focus {
   outline: none;
@@ -308,8 +335,8 @@ th {
   justify-content: center;
 }
 .floating-btn i img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 .floating-btn .close-btn {
   width: 25px;
@@ -339,7 +366,7 @@ th {
   height: calc(100vh - 125px);
   overflow-x: hidden;
   background: #eff3f8;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   box-sizing: border-box;
   position: relative;
 }
@@ -385,7 +412,7 @@ th {
   display: block;
 }
 .cmn-que p {
-  font-family: "latoregular";
+  /* font-family: "latoregular"; */
   margin: 0;
   font-size: 17px;
   color: #4a3bf5;
@@ -509,8 +536,31 @@ th {
   width: 300px !important;
 }
 
+.h-mic i {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: #374ff9;
+  border: 5px solid #374ff9;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 36px;
+  animation: pulsate infinite 1.5s;
+}
 
-@media  screen and (max-width: 1600px) {
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.3, 1.3);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1600px) {
   .floating-btn i img {
     width: 20px;
     height: 20px;
@@ -534,17 +584,16 @@ th {
     height: calc(100vh - 265px);
   }
   .ChatScreen .txt p {
-        font-size: 12px;
+    font-size: 12px;
     line-height: 24px;
-  
+  }
+  .custom-table {
+    display: inline;
+  }
 }
-.custom-table {display:inline;}
 
-
-}
-
-@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+@media only screen and (min-width: 2300px) and (max-width: 2560px) {
   .ChatScreen .chat-sec {
-    height: calc(100vh - 1045px);
+    height: calc(100vh - 780px);
   }
 }
