@@ -16,8 +16,8 @@ const config = {
   themeConfig:{
       dateLocale:"en",
       dateFormat: "hh:mm A | MMM DD",
-      chatWindow: "FullScreen",
-      openChatByDefault: false,
+      chatWindow: "ChatScreen",
+      openChatByDefault: true,
       themeColor: ""
   },
   sampleQuestions: [
