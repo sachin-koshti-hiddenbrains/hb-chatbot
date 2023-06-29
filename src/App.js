@@ -6,7 +6,7 @@ function App() {
   const profilePic = config.userConfig.profilePic
     ? config.userConfig.profilePic
     : "/src/assets/images/user.png";
-  const botName = config.botConfig.BotName ? config.botConfig.BotName : "Bot";
+  const botName = config.botConfig.botName ? config.botConfig.botName : "Bot";
   const botProfilePic = config.botConfig.botProfilePic
     ? config.botConfig.botProfilePic
     : "/src/assets/images/user.png";
@@ -16,8 +16,8 @@ function App() {
   const chatView = config.generalConfig.chatWindow
     ? config.generalConfig.chatWindow
     : "FullScreen";
-  const defaultOpen = config.generalConfig.defaultOpen
-    ? config.generalConfig.defaultOpen
+  const defaultOpen = config.generalConfig.openChatByDefault
+    ? config.generalConfig.openChatByDefault
     : false;
   const configsampleQues = config.sampleQuestions ? config.sampleQuestions : [];
   const dateLocale = config.generalConfig.dateLocale
@@ -26,6 +26,8 @@ function App() {
   if (config.serverEndpoint == "") {
     return console.error("Required server endpoint");
   }
+
+  let serverHost = 'https://hb-chatbot-delta.vercel.app'
 
   const { useEffect, useState, useRef } = React;
   const [isopenChat, setIsOpenChat] = useState(defaultOpen);
@@ -666,7 +668,7 @@ function App() {
                             setIsOpenChat((isopenChat) => !isopenChat);
                           }}
                         >
-                          <img src="/src/assets/images/close-icon.png" alt="" />
+                          <img src={serverHost + "/src/assets/images/close-icon.png"} alt="" />
                         </button>
                       </div>
                     </div>
@@ -793,13 +795,13 @@ function App() {
                           {speechValue.length > 0 ? (
                             <img
                               className="blue-btn"
-                              src="/src/assets/images/send-btn.png"
+                              src={serverHost + "/src/assets/images/send-btn.png"}
                               alt=""
                             />
                           ) : (
                             <img
                               className="grey-btn"
-                              src="/src/assets/images/send-btn-h.png"
+                              src={serverHost + "/src/assets/images/send-btn-h.png"}
                               alt=""
                             />
                           )}
@@ -814,7 +816,7 @@ function App() {
                             <i></i>{" "}
                             <img
                               className="grey-btn-mick"
-                              src="/src/assets/images/mic.png"
+                              src={serverHost + "/src/assets/images/mic.png"}
                               alt=""
                             />
                           </button>
@@ -826,7 +828,7 @@ function App() {
                           >
                             <img
                               className="blue-btn-mick"
-                              src="/src/assets/images/mic-h.png"
+                              src={serverHost + "/src/assets/images/mic-h.png"}
                               alt=""
                             />
                           </button>
@@ -848,13 +850,13 @@ function App() {
           <i>
             {isopenChat ? (
               <img
-                src="/src/assets/images/close-btn.png"
+                src={serverHost + "/src/assets/images/close-btn.png"}
                 alt=""
                 className="chat-open-btn"
               />
             ) : (
               <img
-                src="/src/assets/images/chat-btn.png"
+                src={serverHost + "/src/assets/images/chat-btn.png"} 
                 width="30"
                 alt=""
                 className="close-btn"
