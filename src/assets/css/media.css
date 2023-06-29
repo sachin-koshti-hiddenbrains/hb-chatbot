@@ -1,0 +1,37 @@
+@media screen and (max-width: 1600px) {
+  .floating-btn i img {
+    width: 20px;
+    height: 20px;
+  }
+  .custom-table td,
+  th {
+    padding: 5px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .top-sec h2 {
+    font-size: 16px;
+    line-height: 28px;
+    color: #000;
+    margin: 0 0 0 30px;
+  }
+  .ChatScreen {
+    height: 600px;
+  }
+  /* .ChatScreen .chat-sec {
+    height: calc(100vh - 265px);
+  } */
+  .ChatScreen .txt p {
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .custom-table {
+    display: inline;
+  }
+}
+
+@media only screen and (min-width: 2300px) and (max-width: 2560px) {
+  /* .ChatScreen .chat-sec {
+    height: calc(100vh - 780px);
+  } */
+}
