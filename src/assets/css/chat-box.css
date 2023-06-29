@@ -1,15 +1,118 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --floatingBottomButtons: #4a3bf5;
+  --chatScreenBg: #eff3f8;
+  --chatHeadingBg: #ffffff;
+  --chatHeadingTitle: #000000;
+  --chatHeadingTitleSize: 18px;
+  --chatTypeField: #ffffff;
+  --chatDayLabelBg: #2e90f0;
+  --chatDayLabelText: #ffffff;
+  --chatDateTimeLbl: #555555bd;
+  --chatDateTimeLblSize: 14px;
+  --chatGuestNameClr: #000000;
+  --chatOutgoindMsgBg: #c9e4fb;
+  --chatOutgoindMsgTextSize: 16px;
+  --chatOutgoindMsgTextClr: #000000;
+  --chatIngoindMsgBg: #ffffff;
+  --chatIngoindMsgTextSize: 16px;
+  --chatIngoindMsgTextClr: #000000;
+  --chatTableBrdrClr: #cccccc;
+  --chatTableCellClr: #000000;
+  --chatTableCellHdrClr: #ffffff;
+  --chatTableCellHdrBg: #2e90f0;
+  --chatTableEvenBg: #eff3f8;
+  --chatFooterBg: #fcfaf1;
+  --chatMicAnimBg: #2e90f0; 
+}
+
+/* :root {
+  --floatingBottomButtons: #07a799; //Floating button
+  --chatScreenBg: #f7fdfc; //Background
+  --chatHeadingBg: #ffffff; //HeadingBackground
+  --chatHeadingTitle: #000000; //Heading titleColor
+  --chatHeadingTitleSize: 18px; //Heading titleTextSize ------
+  --chatTypeField: #ffffff; NO
+  --chatDayLabelBg: #07a799;
+  --chatDayLabelText: #ffffff;
+  --chatDateTimeLbl: #555555bd;
+  --chatDateTimeLblSize: 14px;
+  --chatGuestNameClr: #000000;
+  --chatOutgoindMsgBg: #ade2de;
+  --chatOutgoindMsgTextSize: 16px;
+  --chatOutgoindMsgTextClr: #000000;
+  --chatIngoindMsgBg: #ffffff;
+  --chatIngoindMsgTextSize: 16px;
+  --chatIngoindMsgTextClr: #000000;
+  --chatTableBrdrClr: #cccccc;
+  --chatTableCellClr: #000000;
+  --chatTableCellHdrClr: #ffffff;
+  --chatTableCellHdrBg: #07a799;
+  --chatTableEvenBg: #eef7f6;
+  --chatFooterBg: #fcfaf1;
+} */
+/* 
+:root {
+  --floatingBottomButtons: #ffd000;
+  --chatScreenBg: #fcfaf1;
+  --chatHeadingBg: #ffffff;
+  --chatHeadingTitle: #ffffff;
+  --chatHeadingTitleSize: 18px;
+  --chatTypeField: #ffffff;
+  --chatDayLabelBg: #ffd000;
+  --chatDayLabelText: #000000;
+  --chatDateTimeLbl: #555555bd;
+  --chatDateTimeLblSize: 14px;
+  --chatGuestNameClr: #000000;
+  --chatOutgoindMsgBg: #ffd000;
+  --chatOutgoindMsgTextSize: 16px;
+  --chatOutgoindMsgTextClr: #000000;
+  --chatIngoindMsgBg: #ffffff;
+  --chatIngoindMsgTextSize: 16px;
+  --chatIngoindMsgTextClr: #000000;
+  --chatTableBrdrClr: #cccccc;
+  --chatTableCellClr: #000000;
+  --chatTableCellHdrClr: #2c2c2c;
+  --chatTableCellHdrBg: #ffd000;
+  --chatTableEvenBg: #f3f2ec;
+  --chatFooterBg: #f8efc7;
+} */
+
+/* :root {
+  --floatingBottomButtons: #ff4d41;
+  --chatScreenBg: #fcfaf1;
+  --chatHeadingBg: #ff4d41;
+  --chatHeadingTitle: #ffffff;
+  --chatHeadingTitleSize: 18px;
+  --chatTypeField: #ffffff;
+  --chatDayLabelBg: #fde9e8; //DateStickyBar
+  --chatDayLabelText: #000000;  //DateStickyBar textColor
+  --chatDateTimeLbl: #555555bd; // dateTimeLabelColor
+  --chatDateTimeLblSize: 14px; //N0
+  --chatGuestNameClr: #000000;  //usernameColor
+  --chatOutgoindMsgBg: #f5e3e2; //useMesscellColor
+  --chatOutgoindMsgTextSize: 16px; //NO
+  --chatOutgoindMsgTextClr: #000000;  //userTextmessColor
+  --chatIngoindMsgBg: #ffffff;  //botmesscellbackgroundColor
+  --chatIngoindMsgTextSize: 16px;  //NO
+  --chatIngoindMsgTextClr: #000000;//botmesscelltextcolor
+  --chatTableBrdrClr: #cccccc; //chattablebordercolor
+  --chatTableCellClr: #000000; //chattabelcellcolor
+  --chatTableCellHdrClr: #ffffff; //chattableheadertextcolor
+  --chatTableCellHdrBg: #ff4d41; //chattableheadercolor
+  --chatFooterBg: #f5edec; //footerBackgroundcolor
+  --chatMicAnimBg: #ff4d41; // chatmicbgcolor
+} */
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 #hb-chat-box {
   display: inline-block;
   width: 100%;
 }
 .FullScreen {
-  right: 0;
-  top: auto;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,6 +123,7 @@ body {
   right: 0;
   margin: 0 auto;
   box-sizing: border-box;
+  background: #eff3f8;
 }
 
 .ChatScreen {
@@ -57,14 +161,16 @@ body {
   width: 3px;
 }
 .ChatScreen .chat-sec {
-  height: calc(100vh - 405px);
+  height: 78%;
   margin-top: 70px;
+  margin-bottom: 0;
 }
 .ChatScreen .main-chat-box {
   display: block;
   height: 700px;
   overflow: hidden;
   position: relative;
+  background: #eff3f8;
 }
 .ChatScreen .chat-card.incoming .txt {
   max-width: 80%;
@@ -94,11 +200,11 @@ body {
   left: 0;
 }
 .chat-box-top {
-  color: #fff;
+  color: var(--chatHeadingTitle);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--chatHeadingBg);
   height: 70px;
   padding: 0 20px;
   border-radius: 10px 10px 0 0;
@@ -121,16 +227,14 @@ body {
 .top-sec .lt-side img {
   display: block;
   height: 100%;
-  width: 100px;
-  object-fit: contain;
+  width: 100%;
+  object-fit: cover;
 }
 .top-sec h2 {
-  font-size: 18px;
+  font-size: var(--chatHeadingTitleSize);
   line-height: 28px;
-  color: #000;
+  color: var(--chatHeadingTitle);
   margin: 0 0 0 30px;
-  width: 100%;
-  text-align: center;
 }
 .rt-side {
   display: flex;
@@ -153,7 +257,7 @@ body {
 }
 
 .top-sec .lt-side {
-  width: 100%;
+  width: 50%;
   display: flex;
   align-items: center;
 }
@@ -189,7 +293,7 @@ body {
   margin-bottom: 10px;
 }
 .profile h2 {
-  font-size: 14px;
+  font-size: var(--chatDateTimeLblSize);
   line-height: 22px;
 }
 
@@ -198,12 +302,12 @@ span.date-time {
 }
 span.date-time time {
   font-size: 12px;
-  color: #555555bd;
+  color: var(--chatDateTimeLbl);
   margin-left: 20px;
   line-height: 22px;
 }
 .chat-card.outgoing .txt {
-  background: #c9e4fb;
+  background: var(--chatOutgoindMsgBg);
   min-width: 50px;
   display: inline-block;
   max-width: 500px;
@@ -218,11 +322,16 @@ span.date-time time {
   margin-right: 0;
 }
 .chat-card.incoming .txt {
-  background: #fff;
+  background: var(--chatIngoindMsgBg);
   min-width: 100px;
   display: inline-block;
   max-width: 500px;
   border-radius: 0px 20px 20px 20px;
+}
+
+.chat-card.incoming .txt p {
+  color: var(--chatIngoindMsgTextSize);
+  font-size: var(--chatIngoindMsgTextClr);
 }
 
 .chat-card.loading-card .txt {
@@ -246,25 +355,32 @@ span.date-time em {
 
 .custom-table td,
 th {
-  border: 1px solid #00000042;
+  border: 1px solid var(--chatTableBrdrClr);
   text-align: left;
   padding: 10px 8px;
   font-size: 14px;
   line-height: 24px;
+  color: var(--chatTableCellClr);
+}
+
+.custom-table th {
+  color: var(--chatTableCellHdrClr);
+  background: var(--chatTableCellHdrBg);
 }
 
 .chat-sec tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: var(--chatTableEvenBg);
 }
 .txt {
   margin-bottom: 10px;
 }
 .txt p {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--chatOutgoindMsgTextSize);
   line-height: 32px;
   letter-spacing: 1px;
   margin-bottom: 0;
+  color: var(--chatOutgoindMsgTextClr);
 }
 .chat-card .txt {
   padding: 10px;
@@ -272,7 +388,6 @@ th {
 
 .chat-card.outgoing .profile {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   margin-bottom: 10px;
   flex-direction: row-reverse;
@@ -280,17 +395,17 @@ th {
 }
 .chat-card.outgoing .profile h2 {
   margin: 0 10px;
+  color: var(--chatGuestNameClr);
 }
 
 .chat-footer {
-  background: #eff3f8;
+  background: var(--chatScreenBg);
   position: absolute;
   width: 100%;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   box-sizing: border-box;
 }
-
-
 
 .chat-footer input {
   width: 100%;
@@ -301,8 +416,6 @@ th {
   padding: 5px 10px;
   /* font-family: "latoregular"; */
   font-size: 16px;
-
-
 }
 .chat-footer input:focus {
   outline: none;
@@ -355,20 +468,23 @@ th {
   padding: 5px 20px;
   justify-content: space-between;
   width: calc(100% - 40px);
-  background: #fff;
+  background: var(--chatTypeField);
   margin: 10px auto;
   border-radius: 20px;
   box-sizing: border-box;
+  position: relative;
+  top: -10px;
 }
 .chat-sec {
   display: block;
   overflow: scroll;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 150px);
   overflow-x: hidden;
-  background: #eff3f8;
+  background: var(--chatScreenBg);
   padding: 20px 20px 0 20px;
   box-sizing: border-box;
   position: relative;
+  margin-bottom: 20px;
 }
 .chip-card {
   position: absolute;
@@ -391,7 +507,7 @@ th {
 .chip-card ul li {
   min-width: 200px;
   width: auto;
-  border: 2px solid #4a3bf5;
+  border: 2px solid var(--floatingBottomButtons);
   padding: 15px;
   box-sizing: border-box;
   border-radius: 50px;
@@ -412,13 +528,13 @@ th {
   display: block;
 }
 .cmn-que p {
-  /* font-family: "latoregular"; */
+  font-family: 'latoregular';
   margin: 0;
   font-size: 17px;
-  color: #4a3bf5;
+  color: var(--floatingBottomButtons);
 }
 .chip-card ul li:hover {
-  background: #4a3bf5;
+  background: var(--floatingBottomButtons);
 }
 .chip-card ul li:hover .cmn-que p {
   color: #fff;
@@ -430,6 +546,7 @@ th {
   display: inline-block;
   overflow-x: hidden;
   max-height: 380px;
+  border: 1px solid var(--chatTableBrdrClr);
 }
 
 .typing-loader {
@@ -522,13 +639,13 @@ th {
   justify-content: center;
 }
 .dsb-in {
-  background: #2e90f0;
+  background: var(--chatDayLabelBg);
   border-radius: 50px;
   width: auto;
   padding: 3px;
 }
 .dsb-in p {
-  color: #fff;
+  color: var(--chatDayLabelText);
   margin: 3px;
 }
 
@@ -537,15 +654,15 @@ th {
 }
 
 .h-mic i {
-  content: "";
+  content: '';
   width: 30px;
   height: 30px;
-  background: #374ff9;
-  border: 5px solid #374ff9;
+  background: var(--chatMicAnimBg);
+  border: 5px solid var(--chatMicAnimBg);
   border-radius: 50%;
   position: absolute;
-  top: 20px;
-  right: 36px;
+  top: -9px;
+  right: -3px;
   animation: pulsate infinite 1.5s;
 }
 
@@ -559,41 +676,6 @@ th {
     opacity: 0;
   }
 }
-
-@media screen and (max-width: 1600px) {
-  .floating-btn i img {
-    width: 20px;
-    height: 20px;
-  }
-  .custom-table td,
-  th {
-    padding: 5px;
-    font-size: 12px;
-    line-height: 24px;
-  }
-  .top-sec h2 {
-    font-size: 16px;
-    line-height: 28px;
-    color: #000;
-    margin: 0 0 0 30px;
-  }
-  .ChatScreen {
-    height: 600px;
-  }
-  .ChatScreen .chat-sec {
-    height: calc(100vh - 265px);
-  }
-  .ChatScreen .txt p {
-    font-size: 12px;
-    line-height: 24px;
-  }
-  .custom-table {
-    display: inline;
-  }
-}
-
-@media only screen and (min-width: 2300px) and (max-width: 2560px) {
-  .ChatScreen .chat-sec {
-    height: calc(100vh - 780px);
-  }
+button.h-mic {
+  position: relative;
 }
