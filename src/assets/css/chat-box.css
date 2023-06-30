@@ -105,14 +105,15 @@
   --chatMicAnimBg: #ff4d41; // chatmicbgcolor
 } */
 
-body {
+.hb-common-chatbot {
   font-family: "Poppins", sans-serif;
 }
 #hb-chat-box {
   display: inline-block;
   width: 100%;
 }
-.FullScreen {
+
+.hb-common-chatbot .FullScreen {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -126,7 +127,7 @@ body {
   background: var(--chatScreenBg);
 }
 
-.ChatScreen {
+.hb-common-chatbot .ChatScreen {
   /* right: 0; */
   top: inherit;
   position: fixed;
@@ -139,7 +140,7 @@ body {
   margin-right: 10px;
   box-sizing: border-box;
 }
-.ChatScreen .chat-footer {
+.hb-common-chatbot .ChatScreen .chat-footer {
   background: var(--chatScreenBg);
   position: absolute;
   width: 100%;
@@ -147,42 +148,42 @@ body {
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
 }
-.ChatScreen .chat-card.incoming .txt {
+.hb-common-chatbot .ChatScreen .chat-card.incoming .txt {
   border-radius: 0 20px 20px 20px;
 }
-.ChatScreen .txt p {
+.hb-common-chatbot .ChatScreen .txt p {
   margin: 0;
   font-size: 14px;
   line-height: 28px;
   letter-spacing: 1px;
   margin-bottom: 0;
 }
-.ChatScreen ::-webkit-scrollbar {
+.hb-common-chatbot .ChatScreen ::-webkit-scrollbar {
   width: 3px;
 }
-.ChatScreen .chat-sec {
+.hb-common-chatbot .ChatScreen .chat-sec {
   height: 78%;
   margin-top: 70px;
   margin-bottom: 0;
 }
-.ChatScreen .main-chat-box {
+.hb-common-chatbot .ChatScreen .main-chat-box {
   display: block;
   height: 700px;
   overflow: hidden;
   position: relative;
   background: var(--chatScreenBg);
 }
-.ChatScreen .chat-card.incoming .txt {
+.hb-common-chatbot .ChatScreen .chat-card.incoming .txt {
   max-width: 80%;
   overflow: scroll;
   max-height: 800px;
   overflow-x: hidden;
 }
-.ChatScreen .chat-card.outgoing .txt {
+.hb-common-chatbot .ChatScreen .chat-card.outgoing .txt {
   max-width: 80%;
 }
 
-.ChatScreen .chat-box-top {
+.hb-common-chatbot .ChatScreen .chat-box-top {
   color: #fff;
   display: flex;
   align-items: center;
@@ -199,7 +200,7 @@ body {
   top: 0;
   left: 0;
 }
-.chat-box-top {
+.hb-common-chatbot .chat-box-top {
   color: var(--chatHeadingTitle);
   display: flex;
   align-items: center;
@@ -213,35 +214,35 @@ body {
   box-sizing: border-box;
   width: 100%;
 }
-.top-sec {
+.hb-common-chatbot .top-sec {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-.top-sec i {
+.hb-common-chatbot .top-sec i {
   display: block;
   width: 40px;
   height: 40px;
 }
-.top-sec .lt-side img {
+.hb-common-chatbot .top-sec .lt-side img {
   display: block;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.top-sec h2 {
+.hb-common-chatbot .top-sec h2 {
   font-size: var(--chatHeadingTitleSize);
   line-height: 28px;
   color: var(--chatHeadingTitle);
   margin: 0 0 0 30px;
 }
-.rt-side {
+.hb-common-chatbot .rt-side {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.rt-side button {
+.hb-common-chatbot .rt-side button {
   background: none;
   border: none;
   cursor: pointer;
@@ -251,12 +252,12 @@ body {
   width: 40px;
   height: 40px;
 }
-.rt-side button img {
+.hb-common-chatbot .rt-side button img {
   width: 100%;
   height: auto;
 }
 
-.top-sec .lt-side {
+.hb-common-chatbot .top-sec .lt-side {
   width: 50%;
   display: flex;
   align-items: center;
@@ -272,7 +273,7 @@ body {
   display: flex;
   align-items: flex-start;
 } */
-.chat-sec img {
+.hb-common-chatbot .chat-sec img {
   margin-right: 10px;
 }
 /* .chat-card.incoming {
@@ -283,47 +284,47 @@ body {
   float: right;
   background: #c9e4fb;
 } */
-.display-profile {
+.hb-common-chatbot .display-profile {
   border-radius: 50%;
 }
-.profile {
+.hb-common-chatbot .profile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.profile h2 {
+.hb-common-chatbot .profile h2 {
   font-size: var(--chatDateTimeLblSize);
   line-height: 22px;
   color: var(--chatNameClr);
   
 }
 
-span.date-time {
+.hb-common-chatbot span.date-time {
   display: block;
 }
-span.date-time time {
+.hb-common-chatbot span.date-time time {
   font-size: 12px;
   color: var(--chatDateTimeLbl);
   margin-left: 20px;
   line-height: 22px;
 }
-.chat-card.outgoing .txt {
+.hb-common-chatbot .chat-card.outgoing .txt {
   background: var(--chatOutgoindMsgBg);
   min-width: 50px;
   display: inline-block;
   max-width: 500px;
   border-radius: 10px 0 10px 10px;
 }
-.chat-card.outgoing {
+.hb-common-chatbot .chat-card.outgoing {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.chat-card.outgoing .profile img {
+.hb-common-chatbot .chat-card.outgoing .profile img {
   margin-right: 0;
 }
-.chat-card.incoming .txt {
+.hb-common-chatbot .chat-card.incoming .txt {
   background: var(--chatIngoindMsgBg);
   min-width: 100px;
   display: inline-block;
@@ -331,12 +332,12 @@ span.date-time time {
   border-radius: 0px 20px 20px 20px;
 }
 
-.chat-card.incoming .txt p {
+.hb-common-chatbot .chat-card.incoming .txt p {
   color: var(--chatIngoindMsgTextSize);
   font-size: var(--chatIngoindMsgTextClr);
 }
 
-.chat-card.loading-card .txt {
+.hb-common-chatbot .chat-card.loading-card .txt {
   background: var(--chatIngoindMsgBg);
   min-width: 100px;
   display: inline-block;
@@ -344,18 +345,18 @@ span.date-time time {
   transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
 }
 
-span.date-time em {
+.hb-common-chatbot span.date-time em {
   font-style: normal;
   font-size: 12px;
   color: #d3d1cf;
 }
-.custom-table {
+.hb-common-chatbot .custom-table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.custom-table td,
+.hb-common-chatbot .custom-table td,
 th {
   border: 1px solid var(--chatTableBrdrClr);
   text-align: left;
@@ -364,22 +365,22 @@ th {
   line-height: 24px;
   color: var(--chatTableCellClr);
 }
-.custom-table::-webkit-scrollbar-track {
+.hb-common-chatbot .custom-table::-webkit-scrollbar-track {
   background: var(--chatIngoindMsgBg);
 }
 
-.custom-table th {
+.hb-common-chatbot .custom-table th {
   color: var(--chatTableCellHdrClr);
   background: var(--chatTableCellHdrBg);
 }
 
-.chat-sec tr:nth-child(even) {
+.hb-common-chatbot .chat-sec tr:nth-child(even) {
   background-color: var(--chatTableEvenBg);
 }
-.txt {
+.hb-common-chatbot .txt {
   margin-bottom: 10px;
 }
-.txt p {
+.hb-common-chatbot .txt p {
   margin: 0;
   font-size: var(--chatOutgoindMsgTextSize);
   line-height: 32px;
@@ -387,23 +388,23 @@ th {
   margin-bottom: 0;
   color: var(--chatOutgoindMsgTextClr);
 }
-.chat-card .txt {
+.hb-common-chatbot .chat-card .txt {
   padding: 10px;
 }
 
-.chat-card.outgoing .profile {
+.hb-common-chatbot .chat-card.outgoing .profile {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
   flex-direction: row-reverse;
   align-items: center;
 }
-.chat-card.outgoing .profile h2 {
+.hb-common-chatbot .chat-card.outgoing .profile h2 {
   margin: 0 10px;
   color: var(--chatNameClr);
 }
 
-.chat-footer {
+.hb-common-chatbot .chat-footer {
   background: var(--chatScreenBg);
   position: absolute;
   width: 100%;
@@ -412,7 +413,7 @@ th {
   box-sizing: border-box;
 }
 
-.chat-footer input {
+.hb-common-chatbot .chat-footer input {
   width: 100%;
   margin: 0 10px 0 0;
   height: 45px;
@@ -422,14 +423,14 @@ th {
   /* font-family: "latoregular"; */
   font-size: 16px;
 }
-.chat-footer input:focus {
+.hb-common-chatbot .chat-footer input:focus {
   outline: none;
 }
-.buttons {
+.hb-common-chatbot .buttons {
   display: flex;
   align-items: center;
 }
-.buttons button {
+.hb-common-chatbot .buttons button {
   display: block;
   margin: 0;
   cursor: pointer;
@@ -437,13 +438,13 @@ th {
   border: none;
   margin-right: 10px;
 }
-.buttons button:last-child {
+.hb-common-chatbot .buttons button:last-child {
   margin-right: 0;
 }
-.buttons button img {
+.hb-common-chatbot .buttons button img {
   width: 22px;
 }
-.floating-btn i {
+.hb-common-chatbot .floating-btn i {
   width: 60px;
   height: 60px;
   box-shadow: 0px 0px 10px -6px #000;
@@ -452,22 +453,22 @@ th {
   align-items: center;
   justify-content: center;
 }
-.floating-btn i img {
+.hb-common-chatbot .floating-btn i img {
   width: 20px;
   height: 20px;
 }
-.floating-btn .close-btn {
+.hb-common-chatbot .floating-btn .close-btn {
   width: 25px;
   height: 25px;
 }
-.floating-btn {
+.hb-common-chatbot .floating-btn {
   display: block;
   position: absolute;
   right: 20px;
   bottom: 20px;
   cursor: pointer;
 }
-.msg-send {
+.hb-common-chatbot .msg-send {
   display: flex;
   align-items: center;
   padding: 5px 20px;
@@ -480,10 +481,10 @@ th {
   position: relative;
   top: -20px;
 }
-.ChatScreen .msg-send {
+.hb-common-chatbot .ChatScreen .msg-send {
   top: 0;
 }
-.chat-sec {
+.hb-common-chatbot .chat-sec {
   display: block;
   overflow: scroll;
   height: calc(100vh - 150px);
@@ -493,7 +494,7 @@ th {
   position: relative;
   margin-bottom: 20px;
 }
-.chip-card {
+.hb-common-chatbot .chip-card {
   position: absolute;
   bottom: 7px;
   left: 0;
@@ -501,7 +502,7 @@ th {
   padding: 15px;
   box-sizing: border-box;
 }
-.chip-card ul {
+.hb-common-chatbot .chip-card ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -511,7 +512,7 @@ th {
   justify-content: center;
 }
 
-.chip-card ul li {
+.hb-common-chatbot .chip-card ul li {
   min-width: 200px;
   width: auto;
   border: 2px solid var(--floatingBottomButtons);
@@ -523,31 +524,30 @@ th {
   cursor: pointer;
   margin-bottom: 15px;
 }
-.chip-card ul li:nth-child(3n) {
+.hb-common-chatbot .chip-card ul li:nth-child(3n) {
   margin-right: 0;
 }
-.chip-card ul li:last-child {
+.hb-common-chatbot .chip-card ul li:last-child {
   margin-right: 0;
 }
-.cmn-que {
+.hb-common-chatbot .cmn-que {
   width: 100%;
   text-align: center;
   display: block;
 }
-.cmn-que p {
-  font-family: "latoregular";
+.hb-common-chatbot .cmn-que p {
   margin: 0;
   font-size: 17px;
   color: var(--floatingBottomButtons);
 }
-.chip-card ul li:hover {
+.hb-common-chatbot .chip-card ul li:hover {
   background: var(--floatingBottomButtons);
 }
-.chip-card ul li:hover .cmn-que p {
+.hb-common-chatbot .chip-card ul li:hover .cmn-que p {
   color: #fff;
 }
 
-.custom-table {
+.hb-common-chatbot .custom-table {
   min-height: 100px;
   overflow: scroll;
   display: inline-block;
@@ -556,7 +556,7 @@ th {
   border: 1px solid var(--chatTableBrdrClr);
 }
 
-.typing-loader {
+.hb-common-chatbot .typing-loader {
   margin: 10px auto;
   width: 6px;
   height: 6px;
@@ -641,26 +641,26 @@ th {
   background: #555;
 }
 
-.date-sticky-bar {
+.hb-common-chatbot .date-sticky-bar {
   display: flex;
   justify-content: center;
 }
-.dsb-in {
+.hb-common-chatbot .dsb-in {
   background: var(--chatDayLabelBg);
   border-radius: 50px;
   width: auto;
   padding: 3px;
 }
-.dsb-in p {
+.hb-common-chatbot .dsb-in p {
   color: var(--chatDayLabelText);
   margin: 3px;
 }
 
-.window-View {
+.hb-common-chatbot .window-View {
   width: 300px !important;
 }
 
-.h-mic i {
+.hb-common-chatbot .h-mic i {
   content: "";
   width: 30px;
   height: 30px;
@@ -683,6 +683,6 @@ th {
     opacity: 0;
   }
 }
-button.h-mic {
+.hb-common-chatbot button.h-mic {
   position: relative;
 }
