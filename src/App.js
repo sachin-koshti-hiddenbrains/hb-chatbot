@@ -16,8 +16,8 @@ function App() {
   const chatView = config.generalConfig.chatWindow
     ? config.generalConfig.chatWindow
     : "FullScreen";
-  const defaultOpen = config.generalConfig.openChatByDefault
-    ? config.generalConfig.openChatByDefault
+  const defaultOpen = config.generalConfig. openChatByDefault
+    ? config.generalConfig. openChatByDefault
     : false;
   const configsampleQues = config.sampleQuestions ? config.sampleQuestions : [];
   const dateLocale = config.generalConfig.dateLocale
@@ -27,7 +27,7 @@ function App() {
     return console.error("Required server endpoint");
   }
 
-  let serverHost = 'https://hb-chatbot-delta.vercel.app'
+const serverHost="https://hb-chatbot-delta.vercel.app"
 
   const { useEffect, useState, useRef } = React;
   const [isopenChat, setIsOpenChat] = useState(defaultOpen);
@@ -38,18 +38,18 @@ function App() {
   const [conversation, setConversation] = useState([]);
   const [sampleQuestion, setSampleQuestion] = useState(configsampleQues);
   const [islistening, setIslistening] = useState(false);
-  // const [chatWindow, setChatWindow] = useState(chatView);
+  const [chatWindow, setChatWindow] = useState(chatView);
 
-  let chatWindow = "";
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get("view");
-  console.log(product);
-  if (product == "ChatScreen") {
-    chatWindow = "ChatScreen";
-  } else if (product == "FullScreen") {
-    chatWindow = "FullScreen";
-  }
+  // let chatWindow = "";
+  // const queryString = window.location.search;
+  // const urlParams = new URLSearchParams(queryString);
+  // const product = urlParams.get("view");
+  // console.log(product);
+  // if (product == "ChatScreen") {
+  //   chatWindow = "ChatScreen";
+  // } else if (product == "FullScreen") {
+  //   chatWindow = "FullScreen";
+  // }
 
   moment.locale(dateLocale);
   useEffect(() => {
@@ -105,8 +105,6 @@ function App() {
 
       speechRecognition.onspeechend = function () {
         // when user is done speaking
-        console.log("pause");
-
         speechRecognition.stop();
         setIslistening(false);
       };
@@ -528,9 +526,6 @@ function App() {
       // };
 
       if (response.status === 200) {
-        // console.log(response.data.query_result)
-        // SUM(sales_value): null
-        // if(response.data.query_result)
         const Response = {
           sender: "System",
           content: {
@@ -668,7 +663,7 @@ function App() {
                             setIsOpenChat((isopenChat) => !isopenChat);
                           }}
                         >
-                          <img src={serverHost + "/src/assets/images/close-icon.png"} alt="" />
+                          <img src={serverHost+"/src/assets/images/close-icon.png"} alt="" />
                         </button>
                       </div>
                     </div>
@@ -795,13 +790,13 @@ function App() {
                           {speechValue.length > 0 ? (
                             <img
                               className="blue-btn"
-                              src={serverHost + "/src/assets/images/send-btn.png"}
+                              src="/src/assets/images/send-btn.png"
                               alt=""
                             />
                           ) : (
                             <img
                               className="grey-btn"
-                              src={serverHost + "/src/assets/images/send-btn-h.png"}
+                              src="/src/assets/images/send-btn-h.png"
                               alt=""
                             />
                           )}
@@ -828,7 +823,7 @@ function App() {
                           >
                             <img
                               className="blue-btn-mick"
-                              src={serverHost + "/src/assets/images/mic-h.png"}
+                              src={serverHost+"/src/assets/images/mic-h.png"}
                               alt=""
                             />
                           </button>
@@ -850,14 +845,14 @@ function App() {
           <i>
             {isopenChat ? (
               <img
-                src={serverHost + "/src/assets/images/close-btn.png"}
+                src={serverHost+"/src/assets/images/close-btn.png"}
                 alt=""
                 className="chat-open-btn"
               />
             ) : (
               <img
-                src={serverHost + "/src/assets/images/chat-btn.png"} 
-                width="30"
+                src={serverHost+"/src/assets/images/chat-btn.png"} 
+                               width="30"
                 alt=""
                 className="close-btn"
               />
@@ -881,8 +876,9 @@ const micAnimateBg = `--chatMicAnimBg`
 const headingTitleClr = `--chatHeadingTitle`
 const dateBadgeClr = `--chatDayLabelText`
 const chatDateTimeClr = `--chatDateTimeLbl`
-const userNameClr = `--chatOutgoindMsgTextClr`
-const botNameClr = `--chatIngoindMsgTextClr`
+const chatNameClr = `--chatNameClr`
+const incomingChatCellTextClr = `--chatIngoindMsgTextClr`
+const outgoingChatCellTextClr = `--chatOutgoindMsgTextClr`
 
 const headingTitleFont = `--chatHeadingTitleSize`
 const outgoingChatFont = `--chatOutgoindMsgTextSize`
@@ -907,8 +903,10 @@ document.body.style.setProperty(micAnimateBg ,backgroundColor.micAnimateBg);
 document.body.style.setProperty(headingTitleClr ,textColor.headingTitleClr)
 document.body.style.setProperty(dateBadgeClr ,textColor.dateBadgeClr )
 document.body.style.setProperty(chatDateTimeClr ,textColor.chatDateTimeClr )
-document.body.style.setProperty(userNameClr ,textColor.userNameClr )
-document.body.style.setProperty(botNameClr ,textColor.botNameClr )
+document.body.style.setProperty(chatNameClr ,textColor.chatNameClr )
+document.body.style.setProperty( incomingChatCellTextClr ,textColor. incomingChatCellTextClr )
+document.body.style.setProperty(outgoingChatCellTextClr ,textColor.outgoingChatCellTextClr )
+
 
 document.body.style.setProperty(headingTitleFont , fontSize.headingTitleFont );
 document.body.style.setProperty(outgoingChatFont ,fontSize.outgoingChatFont );
