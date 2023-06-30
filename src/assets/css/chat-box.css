@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 :root {
   --floatingBottomButtons: #4a3bf5;
@@ -24,7 +24,7 @@
   --chatTableCellHdrBg: #2e90f0;
   --chatTableEvenBg: #eff3f8;
   --chatFooterBg: #fcfaf1;
-  --chatMicAnimBg: #2e90f0; 
+  --chatMicAnimBg: #2e90f0;
 }
 
 /* :root {
@@ -106,7 +106,7 @@
 } */
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 #hb-chat-box {
   display: inline-block;
@@ -123,7 +123,7 @@ body {
   right: 0;
   margin: 0 auto;
   box-sizing: border-box;
-  background: #eff3f8;
+  background: var(--chatScreenBg);
 }
 
 .ChatScreen {
@@ -140,7 +140,7 @@ body {
   box-sizing: border-box;
 }
 .ChatScreen .chat-footer {
-  background: #eff3f8;
+  background: var(--chatScreenBg);
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -148,7 +148,7 @@ body {
   border-radius: 0 0 10px 10px;
 }
 .ChatScreen .chat-card.incoming .txt {
-  border-radius: 20px 0 0 0;
+  border-radius: 0 20px 20px 20px;
 }
 .ChatScreen .txt p {
   margin: 0;
@@ -170,7 +170,7 @@ body {
   height: 700px;
   overflow: hidden;
   position: relative;
-  background: #eff3f8;
+  background: var(--chatScreenBg);
 }
 .ChatScreen .chat-card.incoming .txt {
   max-width: 80%;
@@ -295,6 +295,8 @@ body {
 .profile h2 {
   font-size: var(--chatDateTimeLblSize);
   line-height: 22px;
+  color: var(--chatNameClr);
+  
 }
 
 span.date-time {
@@ -335,7 +337,7 @@ span.date-time time {
 }
 
 .chat-card.loading-card .txt {
-  background: #fff;
+  background: var(--chatIngoindMsgBg);
   min-width: 100px;
   display: inline-block;
   border-radius: 0px 20px 20px 20px;
@@ -361,6 +363,9 @@ th {
   font-size: 14px;
   line-height: 24px;
   color: var(--chatTableCellClr);
+}
+.custom-table::-webkit-scrollbar-track {
+  background: var(--chatIngoindMsgBg);
 }
 
 .custom-table th {
@@ -395,7 +400,7 @@ th {
 }
 .chat-card.outgoing .profile h2 {
   margin: 0 10px;
-  color: var(--chatGuestNameClr);
+  color: var(--chatNameClr);
 }
 
 .chat-footer {
@@ -473,14 +478,16 @@ th {
   border-radius: 20px;
   box-sizing: border-box;
   position: relative;
-  top: -10px;
+  top: -20px;
+}
+.ChatScreen .msg-send {
+  top: 0;
 }
 .chat-sec {
   display: block;
   overflow: scroll;
   height: calc(100vh - 150px);
   overflow-x: hidden;
-  background: var(--chatScreenBg);
   padding: 20px 20px 0 20px;
   box-sizing: border-box;
   position: relative;
@@ -528,7 +535,7 @@ th {
   display: block;
 }
 .cmn-que p {
-  font-family: 'latoregular';
+  font-family: "latoregular";
   margin: 0;
   font-size: 17px;
   color: var(--floatingBottomButtons);
@@ -621,7 +628,7 @@ th {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var( --chatScreenBg);
 }
 
 /* Handle */
@@ -654,7 +661,7 @@ th {
 }
 
 .h-mic i {
-  content: '';
+  content: "";
   width: 30px;
   height: 30px;
   background: var(--chatMicAnimBg);
