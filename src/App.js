@@ -644,7 +644,7 @@ const serverHost="https://hb-chatbot-delta.vercel.app"
             className={`${chatWindow == "ChatScreen" ? "ChatScreen" : "FullScreen"
               }`}
           >
-            <div className="container">
+            <div>
               <div className="row">
                 <div className="main-chat-box">
                   <div className="chat-box-top">
