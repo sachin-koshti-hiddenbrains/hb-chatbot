@@ -793,13 +793,13 @@ function HbBot() {
                           {speechValue.length > 0 ? (
                             <img
                               className="hbchat-blue-btn"
-                              src="/src/assets/images/send-btn.png"
+                              src={serverHost + "/src/assets/images/send-btn.png"}
                               alt=""
                             />
                           ) : (
                             <img
                               className="hbchat-grey-btn"
-                              src="/src/assets/images/send-btn-h.png"
+                              src={serverHost + "/src/assets/images/send-btn-h.png"}
                               alt=""
                             />
                           )}
