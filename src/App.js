@@ -790,13 +790,13 @@ const serverHost="https://hb-chatbot-delta.vercel.app"
                           {speechValue.length > 0 ? (
                             <img
                               className="blue-btn"
-                              src="/src/assets/images/send-btn.png"
+                              src={serverHost + "/src/assets/images/send-btn.png"}
                               alt=""
                             />
                           ) : (
                             <img
                               className="grey-btn"
-                              src="/src/assets/images/send-btn-h.png"
+                              src={serverHost + "/src/assets/images/send-btn-h.png"}
                               alt=""
                             />
                           )}
