@@ -1,28 +1,61 @@
 const config = {
-  serverEndpoint: "https://mrs-gpt.projectspreview.net",
+  serverEndpoint: 'https://mrs-gpt.projectspreview.net',
   appConfig: {
-      appName: "DPS 2.0",
-      appLogo: "https://www.interswitchgroup.com/assets/images/home/interswitch_logo.svg",
-      containerId: ""
+    appName: 'Hidden Brains',
+    appLogo: '/src/assets/images/hblogo.jpeg',
+    containerId: '',
   },
   userConfig: {
-      userName: "",
-      profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiehBgL0b25aTe-t4xAhFg18NJM38ANqo9b-14T7R78NQxUDU_W_gfgY6AM-3uSqHQIKY&usqp=CAU"
+    userName: '',
+    profilePic: '',
   },
   botConfig: {
-      botName: "Interswitch",
-      botProfilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXhbWTSFIk4kMtTJTthunKa_U81s0bRdlKw&usqp=CAU"
+    botName: '',
+    botProfilePic: '',
   },
-  themeConfig:{
-      dateLocale:"en",
-      dateFormat: "hh:mm A | MMM DD",
-      chatWindow: "ChatScreen",
-      openChatByDefault: true,
-      themeColor: ""
+
+  generalConfig: {
+    dateLocale: 'en',
+    dateFormat: '',
+    chatWindow: 'FullScreen',
+    openChatByDefault: true,
+  },
+
+  themeConfig: {
+    backgroundColor: {
+      headerbg: '',
+      sampleQuestionBg: '',
+      chatScreenBg: '',
+      dateBadgeBg: '',
+      outgoingChatCellBg: '',
+      incomingChatCellBg: '',
+      micAnimateBg: '',
+    },
+
+    textColor: {
+      headingTitleClr: '',
+      dateBadgeClr: '',
+      chatDateTimeClr: '',
+      chatNameClr: '',
+      incomingChatCellTextClr: '',
+      outgoingChatCellTextClr: '',
+    },
+    fontSize: {
+      headingTitleFont: '',
+      outgoingChatFont: '',
+      incomingChatFont: '',
+    },
+    table: {
+      tableBroder: '',
+      tableHeaderBg: '',
+      tableEvenCellBg: '',
+      tableheaderClr: '',
+      tableCellClr: '',
+    },
   },
   sampleQuestions: [
-    "Top dealers of lagos based on amount",
-    "Total Revenue of current year",
-    "what is final revenue of this month",
-  ]
+    'Top dealers of lagos based on amount',
+    'Total Revenue of current year',
+    'what is final revenue of this month',
+  ],
 };
