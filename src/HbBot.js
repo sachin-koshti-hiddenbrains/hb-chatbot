@@ -195,7 +195,7 @@ function HbBot() {
     setConversation((con) => [...con, ProcessQues]);
     try {
       const response = await axios.post(
-        ENV_API_URL + '/qa',
+        ENV_API_URL,
         {
           question: textOnly,
           debug: "True",
