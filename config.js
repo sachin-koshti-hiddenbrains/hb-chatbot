@@ -1,5 +1,5 @@
 const config = {
-  serverEndpoint: 'http://192.168.36.243:8888/query',
+  serverEndpoint: 'http://192.168.35.46:8888/query',
   appConfig: {
     appName: 'Hidden Brains',
     appLogo: '/src/assets/images/hblogo.jpeg',
