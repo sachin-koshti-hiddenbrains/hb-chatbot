@@ -220,12 +220,11 @@ function HbBot() {
         
         let responseText = ""
         let responseTable = []
-        if(Array.isArray(response.data.response)) {
-          responseText = response.data.response
-        } else if(response.data.response.includes("Answer")){
+        if(response.data.response.includes("Answer")){
           responseText = response.data.response.replace("Answer:", "")
-        }
-        if(Array.isArray(response.data.query_result)) {
+        } else if(response.data.response) {
+          responseText = response.data.response
+        } else if(Array.isArray(response.data.query_result)) {
           responseTable = [...response.data.query_result]
         }
 
