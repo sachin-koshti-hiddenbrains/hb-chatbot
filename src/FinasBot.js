@@ -223,7 +223,7 @@ function FinasBot() {
         let responseText = ""
         let responseTable = []
         if(Array.isArray(response.data.response)) {
-          responseText = response.data.response[0]['text']
+          responseText = response.data.response
         } else if(response.data.response.includes("Answer")){
           responseText = response.data.response.replace("Answer:", "")
         }

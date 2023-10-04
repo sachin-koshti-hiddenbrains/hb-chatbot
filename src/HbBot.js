@@ -28,6 +28,7 @@ function HbBot() {
   if (config.serverEndpoint == "") {
     return console.error("Required server endpoint");
   }
+  const additionalConfig = config.additionalConfig ? config.additionalConfig : {}  
 
   const serverHost = "https://hb-chatbot-delta.vercel.app"
 
@@ -193,13 +194,20 @@ function HbBot() {
       time: formattedDateTime,
     };
     setConversation((con) => [...con, ProcessQues]);
+
+    let apiPayload = {
+      question: textOnly,
+      debug: "False",
+    }
+  
+    if(Object.keys(additionalConfig).length > 0) {
+        apiPayload['additionalConfig'] = additionalConfig
+    }
+
     try {
       const response = await axios.post(
         ENV_API_URL,
-        {
-          question: textOnly,
-          debug: "True",
-        },
+        apiPayload,
         {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -213,7 +221,7 @@ function HbBot() {
         let responseText = ""
         let responseTable = []
         if(Array.isArray(response.data.response)) {
-          responseText = response.data.response[0]['text']
+          responseText = response.data.response
         } else if(response.data.response.includes("Answer")){
           responseText = response.data.response.replace("Answer:", "")
         }
