@@ -633,6 +633,8 @@ loadEle("script", "https://unpkg.com/react@18/umd/react.production.min.js", true
         .catch(err => {
           console.error(err);
         });
+    } else {
+      console.log("react not found...");
     }
   })
   .catch(err => {
