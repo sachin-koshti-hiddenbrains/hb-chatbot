@@ -1,3 +1,5 @@
+
+console.log("hb-bhot loaded")
 const serverHost = "https://hb-chatbot-delta.vercel.app"
 
 function HbBot() {
@@ -569,6 +571,7 @@ function HbBot() {
     </>
   );
 }
+
 const loadEle = (typeoffile = "script", FILE_URL, async = true, type = "") => {
 
   return new Promise((resolve, reject) => {
