@@ -607,8 +607,9 @@ const loadEle = (typeoffile = "script", FILE_URL, async = true, type = "") => {
 // https://unpkg.com/react@18/umd/react.development.js
 // https://unpkg.com/react-dom@18/umd/react-dom.development.js
 
+console.log("loading started...");
 
-loadEle("script", " https://unpkg.com/react@18/umd/react.production.min.js", true)
+loadEle("script", "https://unpkg.com/react@18/umd/react.production.min.js", true)
   .then(data => {
     console.log("React loaded successfully");
     if ("React" in window) {
@@ -636,6 +637,7 @@ loadEle("script", " https://unpkg.com/react@18/umd/react.production.min.js", tru
   })
   .catch(err => {
     console.error(err);
+    console.log("loading error...", err);
   });
 
 loadEle("script", "https://unpkg.com/axios/dist/axios.min.js", true)
