@@ -25,6 +25,7 @@
   --chatTableEvenBg: #eff3f8;
   --chatFooterBg: #fcfaf1;
   --chatMicAnimBg: #2e90f0;
+  --chatfontFamily:"Poppins";
 }
 
 /* :root {
@@ -106,7 +107,8 @@
 } */
 
 body {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: var(--chatfontFamily)
 }
 
 #hb-chat-box {
@@ -132,7 +134,7 @@ body {
   top: inherit;
   position: fixed;
   bottom: 90px;
-  width: 450px;
+  width: 525px;
   box-shadow: 0 -6px 99px -17px rgba(0, 0, 0, 0.68);
   /* left: 0; */
   border-radius: 10px;
@@ -159,7 +161,7 @@ body {
   margin-bottom: 0;
 }
 .hb-common-chatbot .ChatScreen ::-webkit-scrollbar {
-  width: 3px;
+  width: 7px;
 }
 .hb-common-chatbot .ChatScreen .hbchat-chat-sec {
   height: 78%;
@@ -335,7 +337,7 @@ body {
 .hb-common-chatbot .hbchat-chat-card.hbchat-outgoing {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
 }
 .hb-common-chatbot .hbchat-chat-card.hbchat-outgoing .profile img {
   margin-right: 0;
@@ -571,7 +573,6 @@ th {
   min-height: 100px;
   overflow: scroll;
   display: inline-block;
-  overflow-x: hidden;
   max-height: 380px;
   border: 1px solid var(--chatTableBrdrClr);
 }
@@ -643,7 +644,8 @@ th {
 
 /* width */
 .hb-common-chatbot ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
+  height:8px;
 }
 
 /* Track */
@@ -696,6 +698,16 @@ th {
 }
 
 @-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.3, 1.3);
+    opacity: 0;
+  }}
+
+  @keyframes pulsate {
   0% {
     -webkit-transform: scale(1, 1);
     opacity: 1;

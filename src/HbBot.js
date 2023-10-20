@@ -1,5 +1,5 @@
 
-console.log("hb-bhot loaded")
+
 const serverHost = "https://hb-chatbot-delta.vercel.app"
 
 function HbBot() {
@@ -226,7 +226,9 @@ function HbBot() {
           responseText = response.data.response.replace("Answer:", "")
         } else if(response.data.response) {
           responseText = response.data.response
-        } else if(Array.isArray(response.data.query_result)) {
+        }
+
+        if(Array.isArray(response.data.query_result)) {
           responseTable = [...response.data.query_result]
         }
 
@@ -260,13 +262,25 @@ function HbBot() {
 
   function ShowTable(props) {
     const { table } = props;
+
     String.prototype.toProperCase = function () {
       return this.replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
     };
+    function convertCamelCaseToWords(camelCaseString) {
+      // Insert a space before all uppercase letters, then capitalize the first letter
+      return camelCaseString.replace(/([A-Z])/g, ' $1')
+                          .replace(/^./, function(str){ return str.toUpperCase(); });
+    }
     const RowKeys = Object.keys(table[0]).map((key) =>
-      key.replaceAll("_", " ").toProperCase()
+    {
+      // key.replaceAll("_", " ").toProperCase()
+      const keyReplace = key.replaceAll("_", " ")
+      const value = convertCamelCaseToWords(keyReplace)
+      return value
+    } 
+
     );
     const rows = Object.keys(table[0]);
 
