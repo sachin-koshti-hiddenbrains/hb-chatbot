@@ -1,9 +1,12 @@
 const config = {
-  serverEndpoint: 'http://192.168.35.46:8888/query',
+  serverEndpoint: 'https://vts-gpt.mrsholdings.com/query',
   appConfig: {
     appName: 'Hidden Brains',
     appLogo: '/src/assets/images/hblogo.jpeg',
     containerId: '',
+  },
+  additionalConfig: {
+    company_access_key: "05e620e7abd9e2a9c54e81561841e94d"
   },
   userConfig: {
     userName: '',
