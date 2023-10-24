@@ -1,5 +1,5 @@
 const config = {
-  serverEndpoint: 'https://vts-gpt.mrsholdings.com/query',
+  serverEndpoint: 'https://bot.rockeye.com',
   appConfig: {
     appName: 'Hidden Brains',
     appLogo: '/src/assets/images/hblogo.jpeg',
