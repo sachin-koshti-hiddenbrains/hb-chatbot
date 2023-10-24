@@ -127,6 +127,7 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   background: var(--chatScreenBg);
+  transition: opacity 0.4s linear;
 }
 
 .hb-common-chatbot .ChatScreen {
@@ -135,13 +136,27 @@ body {
   position: fixed;
   bottom: 90px;
   width: 525px;
-  box-shadow: 0 -6px 99px -17px rgba(0, 0, 0, 0.68);
+  box-shadow: 0 3px 69px -17px rgba(0, 0, 0, 0.68);
   /* left: 0; */
   border-radius: 10px;
   right: 0;
   margin-right: 10px;
   box-sizing: border-box;
+  z-index: 999;
+  transition-delay: 250ms;
+  transition: all ease 350ms;
+  
 }
+.hb-common-chatbot .ChatScreen.expand {
+  width: calc(100% - 40%);
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: 50px;
+ }
+ .hb-common-chatbot .ChatScreen.expand .hbchat-main-chat-box { height: calc(100vh - 200px); }
+
 .hb-common-chatbot .ChatScreen .hbchat-chat-footer {
   background: var(--chatScreenBg);
   position: absolute;
@@ -207,6 +222,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
+  box-shadow: 0 -6px 30px -17px rgba(0, 0, 0, 0.68);
 }
 .hb-common-chatbot .hbchat-chat-box-top {
   color: var(--chatHeadingTitle);
@@ -264,6 +280,8 @@ body {
   width: 100%;
   height: auto;
 }
+.hb-common-chatbot .hbchat-rt-side button.hbchat-expand-icon img { width: auto; max-width: 18px; }
+.hb-common-chatbot .hbchat-rt-side button.hbchat-expand-icon {padding: 0; width: 30px; height: 30px; margin-top: 2px;}
 .hb-common-chatbot .hbchat-profile-pic {
   display: block;
   width: 60px;
@@ -337,7 +355,7 @@ body {
 .hb-common-chatbot .hbchat-chat-card.hbchat-outgoing {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: end;
 }
 .hb-common-chatbot .hbchat-chat-card.hbchat-outgoing .profile img {
   margin-right: 0;
@@ -368,6 +386,9 @@ body {
   font-size: 12px;
   color: #d3d1cf;
 }
+.hb-common-chatbot .hbchat-custom-table th:first-child { min-width: 45px;}
+.hb-common-chatbot .hbchat-custom-table th { min-width: 225px;}
+
 .hb-common-chatbot .hbchat-custom-table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -573,7 +594,7 @@ th {
   min-height: 100px;
   overflow: scroll;
   display: inline-block;
-  max-height: 380px;
+  max-height: 525px;
   border: 1px solid var(--chatTableBrdrClr);
 }
 
@@ -749,7 +770,7 @@ th {
     line-height: 24px;
   }
   .hb-common-chatbot .hbchat-custom-table {
-    display: inline;
+    /* display: inline; */
   }
 }
 
@@ -763,4 +784,14 @@ th {
   .hb-common-chatbot .ChatScreen .hbchat-main-chat-box {
     height: calc(100vh - 140px);
   }
+}
+
+.show-chat{
+  opacity: 1;
+  transition: opacity 0.4s linear;
+}
+
+.hide-chat{
+  opacity: 0;
+  transition: opacity 0.4s linear;
 }
